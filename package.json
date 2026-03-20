@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "Gil Barbara <gilbarbara@gmail.com>",
   "bin": {
-    "react-joyride-migrate": "./dist/cli.js"
+    "react-joyride-migrate": "dist/cli.cjs"
   },
   "type": "module",
   "files": [
