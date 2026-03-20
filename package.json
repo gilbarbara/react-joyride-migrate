@@ -1,0 +1,67 @@
+{
+  "name": "react-joyride-migrate",
+  "version": "0.0.0",
+  "description": "Codemod for migrating react-joyride v2 to v3",
+  "license": "MIT",
+  "author": "Gil Barbara <gilbarbara@gmail.com>",
+  "bin": {
+    "react-joyride-migrate": "./dist/cli.js"
+  },
+  "type": "module",
+  "files": [
+    "dist",
+    "src",
+    "transforms"
+  ],
+  "dependencies": {
+    "jscodeshift": "^17.3.0"
+  },
+  "devDependencies": {
+    "@gilbarbara/eslint-config": "^1.0.4",
+    "@gilbarbara/prettier-config": "^1.0.0",
+    "@gilbarbara/tsconfig": "^1.0.0",
+    "@types/jscodeshift": "^17.3.0",
+    "@types/node": "^24.12.0",
+    "eslint": "^9.39.4",
+    "husky": "^9.1.7",
+    "prettier": "^3.8.1",
+    "repo-tools": "^0.3.1",
+    "tsdown": "^0.21.4",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.0"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "lint": "eslint --fix src",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "validate": "pnpm lint && pnpm typecheck && pnpm test",
+    "prepare": "husky"
+  },
+  "prettier": "@gilbarbara/prettier-config",
+  "tsdown": [
+    {
+      "entry": [
+        "src/cli.ts"
+      ],
+      "format": [
+        "cjs"
+      ],
+      "outDir": "dist",
+      "clean": true,
+      "outputOptions": {
+        "banner": "#!/usr/bin/env node"
+      }
+    },
+    {
+      "entry": [
+        "transforms/v3.ts"
+      ],
+      "format": [
+        "cjs"
+      ],
+      "outDir": "transforms/dist"
+    }
+  ]
+}
