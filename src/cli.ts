@@ -36,6 +36,8 @@ async function main() {
 
   const transformPath = TRANSFORMS[subcommand];
 
+  console.log('Migration guide: https://react-joyride.com/docs/migration\n');
+
   const result = await jscodeshift(transformPath, paths, {
     dry,
     print,
@@ -67,6 +69,9 @@ Examples:
   npx react-joyride-migrate v3 src/
   npx react-joyride-migrate v3 src/ --dry
   npx react-joyride-migrate v3 src/ --use-hook
+
+Migration guide:
+  https://react-joyride.com/docs/migration
 `.trim(),
   );
 }

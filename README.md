@@ -17,6 +17,8 @@ npx react-joyride-migrate v3 src/components/Tour.tsx
 
 Supports `.tsx`, `.ts`, `.jsx`, and `.js` files.
 
+> See https://react-joyride.com/docs/migration for the complete v2 to v3 migration reference.
+
 ## What it does
 
 ### Import
@@ -139,10 +141,6 @@ import { Joyride, EventData, STATUS } from 'react-joyride';
 - **`React.createElement(Joyride, ...)`**: detected + TODO, not transformed
 - **Dynamic button props** (`hideBackButton={condition}`): can't statically compose into `buttons` array, adds TODO
 - **`floaterProps` values**: renamed to `floatingOptions` but the value shape changed (`react-floater` -> `@floating-ui`), requires manual review
-
-## Full migration guide
-
-See https://react-joyride.com/docs/migration for the complete v2 to v3 migration reference.
 
 ## License
 
